@@ -10,6 +10,10 @@ const app = express();
 // Port
 const port = process.env.PORT || 5000;
 
+// Routes
+import { router as  healthCheckRoute } from './routes/healthcheck.route.js'
+
+app.use('/api/v1', healthCheckRoute)
 
 // Server
 async function startServer() {
