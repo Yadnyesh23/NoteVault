@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/connectDB.js";
+import rateLimiter from "./middleware/rateLimiter.js";
 
 dotenv.config();
 
@@ -10,10 +11,17 @@ const app = express();
 // Port
 const port = process.env.PORT || 5000;
 
+// Middlerware
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+app.use(rateLimiter)
+
 // Routes
 import { router as  healthCheckRoute } from './routes/healthcheck.route.js'
+import {router as notesRouter} from './routes/notes.route.js'
 
 app.use('/api/v1', healthCheckRoute)
+app.use('/api/v1', notesRouter)
 
 // Server
 async function startServer() {
