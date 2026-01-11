@@ -15,7 +15,7 @@ function NoteDetails(){
     useEffect(()=> {
         const fetchNotes = async() => {
             try {
-                const res = await axios.get(`http://localhost:5001/api/v1/notes/${id}`)
+                const res = await axios.get(`api/v1/notes/${id}`)
                 setNote(res.data.data)
                 console.log(res.data.data);
             } catch (error) {
