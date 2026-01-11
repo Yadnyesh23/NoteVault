@@ -1,0 +1,21 @@
+{
+  "name": "notevault_fullstackproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix Frontend && npm install --prefix Backend && npm run build --prefix Frontend",
+    "start": "npm run start --prefix Backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yadnyesh23/NoteVault.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yadnyesh23/NoteVault/issues"
+  },
+  "homepage": "https://github.com/Yadnyesh23/NoteVault#readme",
+  "description": ""
+}
