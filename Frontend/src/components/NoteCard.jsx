@@ -13,7 +13,7 @@ function NoteCard({ note, setNotes }) {
     if (!window.confirm("Are you sure you want to delete this note?")) return;
 
     try {
-      await axios.delete(`http://localhost:5001/api/v1/notes/${id}`);
+      await axios.delete(`/api/v1/notes/${id}`);
       setNotes(prev => prev.filter(n => n._id !== id));
       toast.success("Note deleted");
     } catch (error) {

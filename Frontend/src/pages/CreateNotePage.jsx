@@ -19,7 +19,7 @@ function CreateNote(){
 
         setLoading(true)
         try {
-            await axios.post('http://localhost:5001/api/v1/notes', {
+            await axios.post('/api/v1/notes', {
                 title,
                 content
             })

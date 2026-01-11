@@ -41,7 +41,7 @@ function NoteDetails(){
     if (!window.confirm("Are you sure you want to delete this note?")) return;
 
     try {
-        await axios.delete(`http://localhost:5001/api/v1/notes/${id}`);
+        await axios.delete(`/api/v1/notes/${id}`);
         toast.success("Note deleted successfully");
         navigate("/");
     } catch (error) {
@@ -59,7 +59,7 @@ function NoteDetails(){
 
     try {
         setSaving(true);
-        await axios.patch(`http://localhost:5001/api/v1/notes/${id}`, {
+        await axios.patch(`/api/v1/notes/${id}`, {
             title: note.title,
             content: note.content,
         });

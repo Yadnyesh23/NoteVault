@@ -14,7 +14,7 @@ function HomePage() {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/v1/notes");
+        const res = await axios.get("/api/v1/notes");
 
         const notesFromApi = res.data.data[1];
 
